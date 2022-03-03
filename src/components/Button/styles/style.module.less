@@ -1,0 +1,45 @@
+@import '../../../theme/theme.less';
+@import '../../../../node_modules/antd/lib/style/themes/default.less';
+
+// >>> ANTD PROPS 
+// .default {
+:global {
+  .ant-btn-default {
+    &:hover {
+      color: @sq-text-color;
+      border-color: @btn-default-border;
+      background: @gray-2;
+    }
+  }
+}
+
+.text {
+  color: @primary-blue-1;
+  &:hover {
+    color: @primary-blue-1;
+    background:rgba(@primary-blue-1, 0.1);
+    border-color: transparent;
+  }
+}
+
+.link:hover > span {
+  text-decoration: underline;
+}
+
+// >>> SUBQUERY PROPS
+.gradient {
+  background: linear-gradient(96.26deg, @primary-blue-1 13.8%, @primary-pink-1 82.83%);;
+}
+
+.outlined {
+  background: rgba(0,0,0,0);
+  border-color: @primary-blue-1;
+  color: @primary-blue-1;
+
+  &:hover {
+    background: rgba(@primary-blue-1, 0.1);
+    border-color: @primary-blue-1;
+    color: @primary-blue-1;
+    // not sure why I have to re-declare border-color and color
+  }
+}
