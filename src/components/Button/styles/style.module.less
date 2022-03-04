@@ -1,5 +1,4 @@
-// @import '../../../theme/theme.less';
-@import '../../../theme/theme.less';
+@import '../../../styles/theme/theme.less';
 @import '../../../../node_modules/antd/lib/style/themes/default.less';
 
 // >>> ANTD PROPS 
@@ -14,8 +13,18 @@
   }
 }
 
+// .default {
+//   &:hover {
+//     // color: @sq-text-color;
+//     border-color: @btn-default-border;
+//     background: @gray-2;
+//   }
+// }
+
 .text {
-  color: @primary-blue-1;
+  color: @primary-pink-1;
+  // color: red;
+
   &:hover {
     color: @primary-blue-1;
     background:rgba(@primary-blue-1, 0.1);
@@ -25,6 +34,7 @@
 
 .link:hover > span {
   text-decoration: underline;
+  // color: red;
 }
 
 // >>> SUBQUERY PROPS
@@ -33,7 +43,7 @@
 }
 
 .outlined {
-  background: rgba(0,0,0,0);
+  background: transparent; 
   border-color: @primary-blue-1;
   color: @primary-blue-1;
 

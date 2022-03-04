@@ -8,13 +8,11 @@ import * as React from 'react';
 import cx from "classnames";
 
 // antd
-import { Button as Button_antd } from 'antd';
+import { Button as AntButton } from 'antd';
 import { NativeButtonProps } from "antd/lib/button/button.d";
 
 // styles
-// import styles from './styles/style.module.less';
 import styles from './styles/style.module.less';
-
 export interface IProps extends NativeButtonProps {
   gradient?: boolean;
   label?: string;
@@ -36,8 +34,7 @@ export const Button: React.FC<IProps> = ({
   iconRight
 }) => {
   return (
-    // eslint-disable-next-line react/jsx-pascal-case
-    <Button_antd
+    <AntButton
       // antd props
       type={type}
       size={size}
@@ -47,8 +44,12 @@ export const Button: React.FC<IProps> = ({
 
       className={cx(
         // >>> ADDING subquery styles
-        {[styles.gradient]: gradient},
-        {[styles.outlined]: outlined},
+        {
+          [styles.gradient]: gradient,
+          [styles.outlined]: outlined,
+        },
+        // outlined && styles.outlined,
+        // gradient && styles.gradient,
 
         // >>> MODIFYING existing antd styles
         type === 'link' && styles.link,
@@ -57,6 +58,6 @@ export const Button: React.FC<IProps> = ({
         )}
     >
       {label}{iconRight}
-    </Button_antd>
+    </AntButton >
   );
 }
